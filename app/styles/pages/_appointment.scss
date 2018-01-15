@@ -1,0 +1,40 @@
+.doctor-phone {
+  color: #A7AAAB;
+}
+
+.doctor-details {
+  @include nexalight-font(1em, 1.4em);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .appointment-info {
+    span {
+      @include nexaregular-font(1em, 1em);
+    }
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .doctor-info {
+    @include nexaregular-font(1em, 1em);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+    p {
+      text-align: center;
+    }
+  }
+}
+
+.doctor-info > img {
+  height: 80px;
+  width: 80px;
+  border: solid 1px rgba(0, 0, 0, 0.26);
+  border-radius: 50%;
+  margin-bottom: 10px;
+}

@@ -1,0 +1,38 @@
+.button {
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.blue {
+  color: #853B95 !important;
+}
+
+.blue:before {
+  border: 2px solid #853B95 !important;
+}
+
+.button:before {
+  border-radius: 50%;
+  border: 2px solid hsla(0, 0%, 0%, 0.26);
+  content: "";
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 90px;
+  width: 90px;
+  margin-left: -46px;
+  margin-top: -46px;
+  opacity: 1;
+}
+.button.circle {
+  padding-top: 6px;
+  @include nexalight-font(1em, 1em);
+  color: hsla(0, 0%, 0%, 0.26);
+  cursor: pointer;
+  display: block;
+  position: relative;
+  top: 50px;
+  margin-top: 25px;
+}

@@ -1,0 +1,23 @@
+.request-block {
+  height: 100%;
+  h2 {
+    color: grey;
+    margin-bottom: 5px;
+    @include nexaregular-font(1.5em, 1em);
+  }
+  .logo{
+    display: block;
+    position: relative;
+    top: 40px;
+    color: grey;
+    text-align: center;
+    margin-bottom: 60px;
+    .thin {
+      font-weight: 300;
+    }
+  }
+}
+
+.md-virtual-repeat-container {
+  margin-top: -35px;
+}

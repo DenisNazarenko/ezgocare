@@ -1,0 +1,24 @@
+{{#link-to 'doctors'}}{{paper-icon "navigate-before" size=42}}{{/link-to}}
+<div class="container">
+  <div class="doctor-details">
+    <div class="doctor-info">
+      <img src={{state.selectedDoctor.path}} />
+      <p>{{state.selectedDoctor.lastName}}</p>
+      <p class="doctor-phone">{{state.selectedDoctor.phone}}</p>
+    </div>
+    <div class="appointment-info">
+      <p><span>Date:</span> {{moment-format state.dateState 'MM/DD/YYYY'}}</p>
+      <p><span>Time:</span> {{state.selectedTime.time}}{{state.selectedTime.timeOfDay}}</p>
+      <p><span>Illness:</span> {{state.symptomState.name}}</p>
+      <p><span>Insurance:</span> {{state.insuranceState.name}}</p>
+      <p><span>Address:</span> {{state.selectedDoctor.address}}</p>
+      <div class="map">
+        {{#leaflet-map lat=state.selectedDoctor.location.lat lng=state.selectedDoctor.location.long zoom=17}}
+          {{tile-layer url="http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"}}
+          {{marker-layer lat=state.selectedDoctor.location.lat lng=state.selectedDoctor.location.long}}
+        {{/leaflet-map}}
+      </div>
+    </div>
+    {{#link-to 'confirmation' class="button circle blue"}}Confirm{{/link-to}}
+  </div>
+</div>

@@ -1,0 +1,9 @@
+<div class="header">
+  {{#link-to 'request'}}{{paper-icon "navigate-before" size=42}}{{/link-to}}
+
+    <input type="date" class="date-picker" value={{moment-format state.dateState 'YYYY-MM-DD'}} {{action 'onSelectedDate' on="change"}} />
+</div>
+
+{{#each model.doctors as |doctor|}}
+  {{doctor-listing doctor=doctor}}
+{{/each}}

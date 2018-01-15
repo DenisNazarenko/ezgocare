@@ -1,0 +1,21 @@
+@font-face {
+  font-family: NexaLight;
+  src: url("fonts/Nexa-Light.otf") format("opentype");
+}
+
+@font-face {
+  font-family: NexaRegular;
+  src: url("fonts/NexaRegular.otf") format("opentype");
+}
+
+@mixin nexalight-font ($size,$height) {
+  line-height: $height;
+  font-size: $size;
+  font-family: NexaLight;
+}
+
+@mixin nexaregular-font ($size,$height) {
+  line-height: $height;
+  font-size: $size;
+  font-family: NexaRegular;
+}

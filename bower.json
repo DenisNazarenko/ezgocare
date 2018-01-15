@@ -1,0 +1,7 @@
+{
+  "name": "ezgocare",
+  "dependencies": {
+    "hammer.js": "2.0.6",
+    "hammer-time": "^1.1.0"
+  }
+}

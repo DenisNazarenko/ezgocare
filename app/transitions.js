@@ -1,0 +1,26 @@
+export default function(){
+  this.transition(
+    this.fromRoute('request'),
+    this.toRoute('doctors'),
+    this.use('toLeft'),
+    this.reverse('toRight')
+  );
+  this.transition(
+    this.fromRoute('doctors'),
+    this.toRoute('appointment'),
+    this.use('toLeft'),
+    this.reverse('toRight')
+  );
+  this.transition(
+    this.fromRoute('appointment'),
+    this.toRoute('confirmation'),
+    this.use('toLeft'),
+    this.reverse('toRight')
+  );
+  this.transition(
+    this.fromRoute('confirmation'),
+    this.toRoute('request'),
+    this.use('toRight'),
+    this.reverse('toLeft')
+  );
+}

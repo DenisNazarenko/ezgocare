@@ -1,0 +1,53 @@
+.md-media-sm {
+  border: solid 1px hsla(0, 0%, 0%, 0.26);
+  border-radius: 50%;
+}
+
+.md-headline {
+  margin-top: 15px;
+  @include nexalight-font(1em, 1em);
+}
+
+md-card-content {
+  @include nexalight-font(1em, 1.4em);
+}
+
+.second-text {
+  padding-top: 4px;
+  color: hsla(0, 0%, 0%, 0.26);
+  @include nexaregular-font(0.8em, 1em);
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+}
+
+.date-picker {
+  height: 42px;
+  text-align: center;
+  @include nexaregular-font(1.5em, 1em);
+  flex: 1;
+  color: gray;
+}
+
+.time-table {
+  color: #929699;
+  padding-top: 10px;
+  .table-column {
+    text-align: center;
+    .table-item {
+      padding: 5px;
+      border: solid 1px #AEAEAF;
+      margin: 2px;
+    }
+  }
+}
+
+.booked {
+  background-color: #D9DADB;
+}
+
+.liquid-container {
+  -webkit-overflow-scrolling: touch;
+}

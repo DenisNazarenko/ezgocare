@@ -1,0 +1,53 @@
+{{#if mobileWidth}}
+  <div class="request-block">
+    <h2>Feel better</h2>
+    <div class="fields-block">
+      {{#paper-autocomplete
+        searchText=(readonly filterBySymptoms)
+        onSearchTextChange=(action "filterBySymptoms")
+        labelPath="data.name"
+        verticalPosition="below"
+        options=filteredSymptoms
+        selected=state.symptomState
+        searchField="data.name"
+        onSelectionChange=(action "changed" "_symptomState")
+        label="Symptoms" as |symptom|}}
+        {{paper-autocomplete-highlight
+          label=symptom.data.name
+          searchText=autocomplete.searchText
+          flags="i"}}
+        {{/paper-autocomplete}}
+
+      {{paper-input
+          label="Location"
+          value=state.locationState
+          onChange=(action "changed" "_locationState")
+          class="md-block"
+      }}
+
+      {{#paper-autocomplete
+        searchText=(readonly filterByInsurance)
+        onSearchTextChange=(action "filterByInsurance")
+        labelPath="data.name"
+        verticalPosition="below"
+        options=filteredInsurance
+        selected=state.insuranceState
+        searchField="data.name"
+        onSelectionChange=(action "changed" "_insuranceState")
+        label="Insurance" as |insurance|}}
+        {{paper-autocomplete-highlight
+          label=insurance.data.name
+            serarchText=autocomplete.searchText
+          flags="i"}}
+        {{/paper-autocomplete}}
+      </div>
+    <h1 class="logo">ez<span class="thin">go</span>care</h1>
+    {{#if state.requestDataValid}}
+      {{#link-to 'doctors' class="button circle blue"}}Confirm{{/link-to}}
+    {{else}}
+      <a class="button circle">Confirm</a>
+    {{/if}}
+  </div>
+{{else}}
+ <h2>Ezgocare app is intended for use on mobile phones. Please visit this site using one.</h2>
+{{/if}}

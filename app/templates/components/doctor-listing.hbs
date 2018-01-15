@@ -1,0 +1,25 @@
+{{#paper-card class="layout-row flex" as |card|}}
+  {{#card.title class="layout-column flex layout-align-center-center flex-40" as |title|}}
+    {{title.media class="flex img-circle" size="sm" src=doctor.path alt=doctor.lastName title=doctor.lastName}}
+    {{#title.text class="flex layout-align-center-center" as |text|}}
+      {{#text.headline}}Dr. {{doctor.lastName}}<span>{{paper-icon "flag" size=20}}</span>{{/text.headline}}
+      {{#text.subhead class="second-text"}}{{doctor.location.distance}}{{/text.subhead}}
+    {{/title.text}}
+  {{/card.title}}
+  {{#card.content class="flex flex-60 time-table"}}
+    <div class="layout-row">
+      <div class="layout-column flex-50 table-column">
+        AM
+        {{#each timeTableLeft as |tiav|}}
+          {{time-table classNames="table-item" available=tiav.available tiav=tiav doctor=doctor}}
+        {{/each}}
+      </div>
+      <div class="layout-column flex-50 table-column">
+        PM
+        {{#each timeTableRight as |tiav|}}
+          {{time-table classNames="table-item" available=tiav.available tiav=tiav doctor=doctor}}
+        {{/each}}
+      </div>
+    </div>
+  {{/card.content}}
+{{/paper-card}}

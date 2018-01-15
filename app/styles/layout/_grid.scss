@@ -1,0 +1,32 @@
+.container {
+  height: 100%;
+}
+
+.request-container, .request-container > .ember-view {
+  height: 100%;
+}
+
+.request-container {
+  padding: 20px;
+}
+
+body, body > .ember-view, .liquid-container, .liquid-child {
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.confirmation-wrapper {
+  h1 {
+    @include nexalight-font(2em, 1em);
+  }
+
+  p {
+    @include nexaregular-font(1em, 1em);
+  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #929699;
+  text-align: center;
+}
